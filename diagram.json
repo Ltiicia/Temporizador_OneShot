@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "author": "Letícia Gonçalves",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-pi-pico-w",
+      "id": "pico",
+      "top": -70.45,
+      "left": 368.35,
+      "attrs": { "builder": "pico-sdk" }
+    },
+    { "type": "wokwi-led", "id": "led1", "top": 92.4, "left": 272.6, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 44.4,
+      "left": 272.6,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -3.6,
+      "left": 272.6,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "res1",
+      "top": 195.95,
+      "left": 268.8,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "res2",
+      "top": 176.75,
+      "left": 268.8,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "res3",
+      "top": 157.55,
+      "left": 268.8,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "button1",
+      "top": -51.4,
+      "left": 240,
+      "attrs": { "color": "blue", "bounce": "1" }
+    }
+  ],
+  "connections": [
+    [ "led3:A", "pico:GP11", "green", [ "h28.8", "v38.4", "h48" ] ],
+    [ "pico:GP12", "led2:A", "green", [ "h0" ] ],
+    [ "led1:A", "pico:GP13", "green", [ "h28.8", "v-38.44" ] ],
+    [ "led3:C", "res3:1", "green", [ "h-66.8", "v124.8" ] ],
+    [ "led2:C", "res2:1", "green", [ "h-57.2", "v96" ] ],
+    [ "led1:C", "res1:1", "green", [ "h-38", "v67.2" ] ],
+    [ "res3:2", "pico:GND.4", "green", [ "h27.6", "v-57.64" ] ],
+    [ "res2:2", "pico:GND.4", "green", [ "h27.6", "v-76.84" ] ],
+    [ "res1:2", "pico:GND.4", "green", [ "h27.6", "v-96.04" ] ],
+    [ "button1:2.r", "pico:GP5", "green", [ "h29", "v29" ] ],
+    [ "button1:1.r", "pico:GND.1", "black", [ "h38.6", "v9.6" ] ]
+  ],
+  "dependencies": {}
+}
